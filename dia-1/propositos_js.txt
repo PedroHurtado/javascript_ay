@@ -1,0 +1,11 @@
+1. Un lenguaje dinamico
+    foo={id:1}
+    foo.name = "Pedro Hurtado"
+2. Debilmente tipado
+    a=1 python js
+    a="Pedro"
+
+    //error
+    var a=1 java c#
+    auto a =1  c++
+3. Orientación objetos, funcional, scripting(proposito general)

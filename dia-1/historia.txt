@@ -1,0 +1,12 @@
+<2015->ES5
+>2015->ES6(x)
+
+Transpiladores
+    TypeScript
+    Babel
+
+https://github.com/tc39/ecma262
+
+Polifyll
+
+https://chromestatus.com/roadmap
