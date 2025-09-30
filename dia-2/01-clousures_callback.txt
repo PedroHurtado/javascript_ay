@@ -1,0 +1,67 @@
+1.callback->Pasar una funcion a otra funcion
+    //asincronas
+    Llamadas a servidor->$ajax
+    evento
+    //sincrono
+    predicate->filter,find
+    map->map
+    agregador->reduce
+
+    Funciones flechas->No hay perdida de ambito
+    Functiones->perdido de ambito
+    
+    [1,2,3,4,5].filter(v=>v%2===0) //sin perdida de ambito
+    [1,2,3,4,5].filter(function(v){return v%2===0}) //perdida de ambito
+
+clousures->funcion
+    retorna otra funcion->pero mantiene el estado o el estado es compartido
+
+function sum(a){
+    return function(b){
+        debugger
+        return a+b
+    }
+}
+
+¿Como obtendría el resultado 8 invocando a la funcion sum?
+    1+7
+    8+0
+    9,-1->sum(9)(-1)
+    4,4->sum(4)(4)
+    5,3->sum(5)(3)
+
+    const result = sum(5)
+    result(95)->100
+    result(25)->30
+    result(30)->35
+
+
+crear una clousure que se pueda leer de la variable y cuando cambie su estado
+imprima por la consola el valor anterior y el nuevo
+
+const result = signal(-30)
+result()->-30
+result.set(50)->oldvalue -30 new value 50
+result()->50
+
+//Angular,React,Vue
+//Qwik,Svelte,Astro,Solid
+function signal(initialValue){   //constructor
+    let value = initialValue  //variable privada de la clase
+    const fn=()=>value //getter
+    fn.set = (newValue)=>{ //setter
+        if(!Object.is(value,newValue)){
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+            console.log(`old-value:${value} new-value:${newValue}`)
+            value=newValue
+        }
+    }
+    return fn
+}
+
+
+//primitivos y objetos clonados
+function events(node,event,callback){
+    node.addEventListener(event,callback)
+    return ()=>node.removeEventListener(event,callback)
+}
