@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-columns: 25% 1fr;
+            gap: 0.25rem;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="layout">
+        <nav>
+            <ul>
+                <li><a data-page="page1" href="">Página1</a></li>
+                <li><a data-page="page2" href="">Página2</a></li>
+                <li><a data-page="page3" href="">Página3</a></li>
+            </ul>
+        </nav>
+        <div id="content">Esperando para mostrar paginas...</div>
+    </div>
+
     <script src="main.js" type="module"></script>
     <script src="main.old.js" nomodule></script>
 </body>
+
 </html>
