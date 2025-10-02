@@ -46,6 +46,7 @@ function update() {
 !function remove() {
     const { div, text, comment } = update()
     div.removeChild(comment)
+    //comment.remove()  no utilizar por compatibilidad
     //div.removeAttribute("id")
     div.removeAttribute('disabled')
     div.style.removeProperty("color")
