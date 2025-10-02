@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <style>        
+        ayesa-calendar{
+            --color-hover:red;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        customElements.whenDefined('ayesa-calendar').then(()=>{
+            console.log("componente cargado")
+        })
+    </script>
+    
+    <template>
+        <div>Hello World</div>
+    </template>
+
+    <ayesa-calendar>
+        <div slot="footer">Footer....</div>
+        <div slot="header">Header....</div>        
+    </ayesa-calendar>
+    <script src="main.js" type="module"> </script>
+</body>
+</html>
